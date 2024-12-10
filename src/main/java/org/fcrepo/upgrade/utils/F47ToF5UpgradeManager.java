@@ -182,10 +182,10 @@ class F47ToF5UpgradeManager extends UpgradeManagerBase implements UpgradeManager
 
         //skip if ACL or Authorization: these files are upgraded through a separate code path
         // see convertAcl() below.
-        if (rdfTypes.contains(ACL) || rdfTypes.contains(AUTHORIZATION)) {
-            newLocation.toFile().delete();
-            return;
-        }
+        //if (rdfTypes.contains(ACL) || rdfTypes.contains(AUTHORIZATION)) {
+        //    newLocation.toFile().delete();
+        //    return;
+        //}
 
         rdfTypes.retainAll(LDP_CONTAINER_TYPES);
         final var isConcreteContainerDefined = !rdfTypes.isEmpty();
@@ -251,17 +251,17 @@ class F47ToF5UpgradeManager extends UpgradeManagerBase implements UpgradeManager
                     }
                 }
                 binaryHeaders.put(CONTENT_TYPE_HEADER, Collections.singletonList(mimetype));
-            } else if (statement.getPredicate().equals(ACCESS_CONTROL)) {
+            //} else if (statement.getPredicate().equals(ACCESS_CONTROL)) {
                 //remove the current statement across both past versions and latest version
-                model.remove(currentStatement);
-                rewriteModel.set(true);
+                //model.remove(currentStatement);
+                //rewriteModel.set(true);
 
                 //on the latest version
-                if(versionTimestamp == null) {
-                    //convert the acl
-                    convertAcl(newLocation, currentStatement.getSubject().getURI(),
-                               currentStatement.getObject().asResource().getURI());
-                }
+                //if(versionTimestamp == null) {
+                //    //convert the acl
+                //    convertAcl(newLocation, currentStatement.getSubject().getURI(),
+                //               currentStatement.getObject().asResource().getURI());
+                //}
             }
         });
 
