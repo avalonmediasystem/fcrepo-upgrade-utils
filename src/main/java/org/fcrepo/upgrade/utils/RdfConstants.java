@@ -96,7 +96,8 @@ public class RdfConstants {
     private static final Set<Property> serverManagedProperties;
     static {
         final ImmutableSet.Builder<Property> b = ImmutableSet.builder();
-        b.addAll(fixityProperties).addAll(ldpManagedProperties).addAll(binaryProperties);
+        //b.addAll(fixityProperties).addAll(ldpManagedProperties).addAll(binaryProperties);
+        b.addAll(fixityProperties).addAll(ldpManagedProperties);
         serverManagedProperties = b.build();
     }
 
