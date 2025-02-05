@@ -78,6 +78,7 @@ public class ResourceMigrator {
     private final String srcRdfExt;
     private final Lang dstRdfLang;
     private final String baseUri;
+    private final List<String> excludedFromSystemProperties;
 
     /**
      * @param config the migration configuration
@@ -91,6 +92,7 @@ public class ResourceMigrator {
         this.baseUri = stripTrailingSlash(config.getBaseUri());
         this.srcRdfLang = config.getSrcRdfLang();
         this.srcRdfExt = "." + srcRdfLang.getFileExtensions().get(0);
+	this.excludedFromSystemProperties = config.getExcludedFromSystemProperties();
 
         // Currently, this is all F6 supports
         this.dstRdfLang = Lang.NT;
@@ -528,7 +530,7 @@ public class ResourceMigrator {
     }
 
     private InputStream writeRdf(final Model rdf) {
-        return RdfUtil.writeRdfTranslateIds(rdf, dstRdfLang, baseUri, INFO_FEDORA);
+        return RdfUtil.writeRdfTranslateIds(rdf, dstRdfLang, baseUri, INFO_FEDORA, excludedFromSystemProperties);
     }
 
     private boolean hasVersions(final Path containerDir) {

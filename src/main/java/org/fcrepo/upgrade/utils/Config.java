@@ -10,6 +10,7 @@ import org.apache.jena.riot.Lang;
 
 import java.io.File;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -41,6 +42,7 @@ public class Config {
     private String fedoraUserAddress = DEFAULT_USER_ADDRESS;
     private boolean forceWindowsMode = false;
     private Path resourceInfoFile;
+    private List<String> excludedFromSystemProperties = new ArrayList<>();
 
     // S3 Options
     private boolean writeToS3;
@@ -231,6 +233,20 @@ public class Config {
     }
 
     /**
+     * @return the predicates to be excluded from the default system properties
+     */
+    public List<String> getExcludedFromSystemProperties() {
+        return excludedFromSystemProperties;
+    }
+
+    /**
+     * Sets the predicates to be excluded from the default system properties
+     */
+    public void setExcludedFromSystemProperties(final List<String> excludedFromSystemProperties) {
+        this.excludedFromSystemProperties = excludedFromSystemProperties;
+    }
+
+    /**
      * This is just used for testing
      *
      * @return indicates whether or not OCFL should be forced into Windows mode
@@ -386,6 +402,7 @@ public class Config {
                 ", threads=" + threads +
                 ", digestAlgorithm='" + digestAlgorithm + '\'' +
                 ", fedoraUser='" + fedoraUser + '\'' +
+                ", excludedFromSystemProperties='" + excludedFromSystemProperties + '\'' +
                 ", fedoraUserAddress='" + fedoraUserAddress + '\'' +
                 ", forceWindowsMode=" + forceWindowsMode +
                 ", writeToS3=" + writeToS3 +

@@ -1,0 +1,4 @@
+<info:fedora/binary-with-versions> <http://www.iana.org/assignments/relation/describedby> <info:fedora/binary-with-versions/fcr:metadata> .
+<info:fedora/binary-with-versions> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType> "text/plain" .
+<info:fedora/binary-with-versions> <http://www.loc.gov/premis/rdf/v1#hasSize> "16"^^<http://www.w3.org/2001/XMLSchema#long> .
+<info:fedora/binary-with-versions> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#filename> "binary-with-versions-3.txt" .

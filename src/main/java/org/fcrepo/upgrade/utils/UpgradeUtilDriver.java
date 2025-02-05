@@ -18,6 +18,7 @@ import org.apache.jena.riot.RDFLanguages;
 import java.io.File;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.HashMap;
@@ -138,6 +139,12 @@ public class UpgradeUtilDriver {
         config.setTargetVersion(FedoraVersion.fromString(cmd.getOptionValue("t")));
         config.setInputDir(inputDir);
         config.setOutputDir(outputDir);
+
+        if (cmd.hasOption("e")) {
+          final var predicates = cmd.getOptionValue("e").split(",");
+          //need to filter for only those which actually are system properties to start with?
+          config.setExcludedFromSystemProperties(Arrays.asList(predicates));
+        }
 
         if (cmd.hasOption("source-rdf")) {
             config.setSrcRdfLang(RDFLanguages.contentTypeToLang(cmd.getOptionValue("source-rdf")));
@@ -274,6 +281,13 @@ public class UpgradeUtilDriver {
                 .hasArg(true)
                 .desc("The address of the user OCFL versions are attributed to. Default: "
                         + Config.DEFAULT_USER_ADDRESS)
+                .required(false)
+                .build());
+
+        configOptions.addOption(Option.builder("e")
+                .longOpt("exclude-from-system-properties")
+                .hasArg(true)
+                .desc("Predicates to exclude from default system managed properties")
                 .required(false)
                 .build());
 

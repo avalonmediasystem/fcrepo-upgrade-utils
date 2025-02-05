@@ -24,6 +24,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -71,7 +72,7 @@ public class ResourceMigratorTest {
         migrator = new ResourceMigrator(config, migrationOcflFactory);
 
         final var expectedConfig = new Config();
-        expectedConfig.setOutputDir(new File("src/test/resources/5.1-to-6-expected"));
+        expectedConfig.setOutputDir(new File("src/test/resources/5.1-to-6-expected-new"));
         expectedOcflFactory = UpgradeManagerFactory.createOcflObjectSessionFactory(expectedConfig);
     }
 
@@ -218,6 +219,20 @@ public class ResourceMigratorTest {
         assertResourcesSame(info);
     }
 
+    @Test
+    public void migrateBasicContainerWithCustomPredicates() {
+	String[] excludedPredicates = new String[] { "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#filename" };
+        config.setExcludedFromSystemProperties(Arrays.asList(excludedPredicates));
+        migrationOcflFactory = UpgradeManagerFactory.createOcflObjectSessionFactory(config);
+        migrator = new ResourceMigrator(config, migrationOcflFactory);
+
+        final var info = containerInfo("container-with-custom-predicate-usage");
+
+        migrateNoChildren(info);
+
+        assertResourcesSame(info);
+    }
+ 
     @Test
     public void migrateBinaryWithEncodedName() {
         final var info = binaryInfo("binary:with!encoding");

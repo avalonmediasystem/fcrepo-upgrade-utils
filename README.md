@@ -16,6 +16,8 @@ The following CLI options are available:
 
 ```
 usage: java -jar fcrepo-upgrade-util-<version>.jar
+ -e,--exclude-from-system-properties Predicates to exclude from default
+                                     system managed properties
  -d,--digest-algorithm <arg>         The digest algorithm to use in OCFL.
                                      Default: sha512
  -h,--help                           Print these options

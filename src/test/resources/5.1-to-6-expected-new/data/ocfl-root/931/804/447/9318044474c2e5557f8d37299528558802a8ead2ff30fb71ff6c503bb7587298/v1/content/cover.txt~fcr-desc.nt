@@ -1,0 +1,5 @@
+<info:fedora/objects/raven/pages/cover/files/cover.txt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://pcdm.org/models#File> .
+<info:fedora/objects/raven/pages/cover/files/cover.txt> <http://www.loc.gov/premis/rdf/v1#hasSize> "15"^^<http://www.w3.org/2001/XMLSchema#long> .
+<info:fedora/objects/raven/pages/cover/files/cover.txt> <http://www.iana.org/assignments/relation/describedby> <info:fedora/objects/raven/pages/cover/files/cover.txt/fcr:metadata> .
+<info:fedora/objects/raven/pages/cover/files/cover.txt> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType> "text/plain" .
+<info:fedora/objects/raven/pages/cover/files/cover.txt> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#filename> "" .

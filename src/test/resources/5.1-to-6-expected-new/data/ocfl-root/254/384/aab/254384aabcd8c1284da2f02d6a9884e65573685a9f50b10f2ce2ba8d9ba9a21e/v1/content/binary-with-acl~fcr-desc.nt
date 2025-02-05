@@ -1,0 +1,4 @@
+<info:fedora/binary-with-acl> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#filename> "binary-with-acl.txt" .
+<info:fedora/binary-with-acl> <http://www.iana.org/assignments/relation/describedby> <info:fedora/binary-with-acl/fcr:metadata> .
+<info:fedora/binary-with-acl> <http://www.loc.gov/premis/rdf/v1#hasSize> "15"^^<http://www.w3.org/2001/XMLSchema#long> .
+<info:fedora/binary-with-acl> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType> "text/plain" .

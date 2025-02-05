@@ -1,0 +1,4 @@
+<info:fedora/external-redirected> <http://www.loc.gov/premis/rdf/v1#hasSize> "23301"^^<http://www.w3.org/2001/XMLSchema#long> .
+<info:fedora/external-redirected> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#filename> "" .
+<info:fedora/external-redirected> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType> "text/plain" .
+<info:fedora/external-redirected> <http://www.iana.org/assignments/relation/describedby> <info:fedora/external-redirected/fcr:metadata> .

@@ -1,0 +1,4 @@
+<info:fedora/container-with-ghosts/a/b/ghost-binary> <http://www.iana.org/assignments/relation/describedby> <info:fedora/container-with-ghosts/a/b/ghost-binary/fcr:metadata> .
+<info:fedora/container-with-ghosts/a/b/ghost-binary> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#filename> "ghost-binary.txt" .
+<info:fedora/container-with-ghosts/a/b/ghost-binary> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType> "text/plain" .
+<info:fedora/container-with-ghosts/a/b/ghost-binary> <http://www.loc.gov/premis/rdf/v1#hasSize> "5"^^<http://www.w3.org/2001/XMLSchema#long> .

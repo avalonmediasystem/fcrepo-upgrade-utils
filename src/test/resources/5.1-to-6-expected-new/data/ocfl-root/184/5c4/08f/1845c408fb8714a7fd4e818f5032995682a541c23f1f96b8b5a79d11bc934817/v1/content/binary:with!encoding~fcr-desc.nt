@@ -1,0 +1,4 @@
+<info:fedora/binary:with!encoding> <http://www.iana.org/assignments/relation/describedby> <info:fedora/binary:with!encoding/fcr:metadata> .
+<info:fedora/binary:with!encoding> <http://www.loc.gov/premis/rdf/v1#hasSize> "21"^^<http://www.w3.org/2001/XMLSchema#long> .
+<info:fedora/binary:with!encoding> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#filename> "test.txt" .
+<info:fedora/binary:with!encoding> <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType> "text/plain" .
